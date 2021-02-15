@@ -1,3 +1,7 @@
-const Sell = () => <>Hello</>;
+const Sell = () => (
+  <>
+    Hello
+  </>
+);
 
 export default Sell;
