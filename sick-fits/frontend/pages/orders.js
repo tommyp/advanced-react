@@ -1,3 +1,3 @@
-const Orders = () => <>Hello</>;
+const Orders = () => <>Orders</>;
 
 export default Orders;

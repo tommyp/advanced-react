@@ -1,6 +1,6 @@
 const Sell = () => (
   <>
-    Hello
+    Sell
   </>
 );
 
