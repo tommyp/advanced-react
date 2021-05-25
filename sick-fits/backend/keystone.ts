@@ -5,6 +5,7 @@ import {
   withItemData,
   statelessSessions,
 } from '@keystone-next/keystone/session';
+import { ProductImage } from './schemas/ProductImage';
 import { Product } from './schemas/Product';
 import { User } from './schemas/User';
 
@@ -40,6 +41,7 @@ export default withAuth(
       // todo: add data seeding here
     },
     lists: createSchema({
+      ProductImage,
       Product,
       User,
     }),
