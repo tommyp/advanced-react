@@ -5,6 +5,7 @@ import {
   withItemData,
   statelessSessions,
 } from '@keystone-next/keystone/session';
+import { Product } from './schemas/Product';
 import { User } from './schemas/User';
 
 const databaseURL =
@@ -39,6 +40,7 @@ export default withAuth(
       // todo: add data seeding here
     },
     lists: createSchema({
+      Product,
       User,
     }),
     ui: {
