@@ -1,3 +1,9 @@
-const Products = () => <>Products</>;
+import Products from '../components/Products';
 
-export default Products;
+const OrderPage = () => (
+  <>
+    <Products />
+  </>
+);
+
+export default OrderPage;

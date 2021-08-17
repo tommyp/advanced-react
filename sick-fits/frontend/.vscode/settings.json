@@ -5,7 +5,6 @@
     "titleBar.activeBackground": "#FFC600",
     "titleBar.inactiveBackground": "#FFC600CC"
   },
-  "editor.formatOnSave": true,
   "[javascript]": {
     "editor.formatOnSave": false
   },
@@ -16,5 +15,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "prettier.disableLanguages": ["javascript", "javascriptreact"]
+  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  "jest.jestCommandLine": "yarn test"
 }
