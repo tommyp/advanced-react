@@ -1,4 +1,4 @@
-import CreateProduct from '../components/createProduct';
+import CreateProduct from '../components/CreateProduct';
 
 const Sell = () => (
   <>
