@@ -53,7 +53,6 @@ export default function UpdateProduct({ id }) {
     inputs, handleChange, clearForm,
   } = useForm(data?.Product);
 
-  console.log(data);
   // 2. we need to get the mutation to update the product
   const [updateProduct, { data: updateData, error: updateError, loading: updateLoading }] = useMutation(UPDATE_PRODUCT_MUTATION);
   // 3. we need the form to handle the updates
@@ -71,7 +70,6 @@ export default function UpdateProduct({ id }) {
 
           },
         });
-        console.log(res);
 
         Router.push({
           pathname: `/product/${res.data.updateProduct.id}`,

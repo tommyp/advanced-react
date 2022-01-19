@@ -5,7 +5,6 @@ export default function paginationField() {
   return {
     keyArgs: false, // tells apollo we will take care of everything
     read(existing = [], { args, cache }) {
-      // console.log(existing, args, cache);
       const { skip, first } = args;
       // read the number of items on the page from the cache
       const data = cache.readQuery({ query: PAGINATION_QUERY });
