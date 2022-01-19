@@ -20,3 +20,9 @@ export function useUser() {
 
   return data?.authenticatedItem;
 }
+
+export const SIGN_OUT_MUTATION = gql`
+mutation {
+  endSession
+}
+`;

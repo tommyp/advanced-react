@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/client';
+import Router from 'next/dist/client/router';
 import useForm from '../lib/useForm';
 import Form from './styles/Form';
 import { CURRENT_USER_QUERY } from './User';
@@ -42,6 +43,10 @@ export default function SignIn() {
 
     await signIn();
     resetForm();
+
+    Router.push({
+      pathname: '/',
+    });
   };
 
   const error = data?.authenticateUserWithPassword?.__typename === 'UserAuthenticationWithPasswordFailure' ? data?.authenticateUserWithPassword : undefined;
