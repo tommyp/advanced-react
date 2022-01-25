@@ -6,7 +6,7 @@ import { useUser, SIGN_OUT_MUTATION, CURRENT_USER_QUERY } from './User';
 export default function Nav() {
   const user = useUser();
 
-  const [endSession, { data, error, loading }] = useMutation(SIGN_OUT_MUTATION, {
+  const [endSession] = useMutation(SIGN_OUT_MUTATION, {
     refetchQueries: [{
       query: CURRENT_USER_QUERY,
     }],

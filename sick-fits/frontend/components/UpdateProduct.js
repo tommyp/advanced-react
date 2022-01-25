@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import gql from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/client';
 import Router from 'next/router';
@@ -50,7 +51,7 @@ export default function UpdateProduct({ id }) {
   });
 
   const {
-    inputs, handleChange, clearForm,
+    inputs, handleChange,
   } = useForm(data?.Product);
 
   // 2. we need to get the mutation to update the product
