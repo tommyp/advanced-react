@@ -10,6 +10,7 @@ import { Product } from './schemas/Product';
 import { User } from './schemas/User';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
+import { CartItem } from './schemas/CartItem';
 
 console.log(process.env.DATABASE_URL);
 
@@ -54,6 +55,7 @@ export default withAuth(
       },
     },
     lists: createSchema({
+      CartItem,
       ProductImage,
       Product,
       User,
