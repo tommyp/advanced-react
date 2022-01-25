@@ -4,6 +4,8 @@ import { useUser } from './User';
 import Supreme from './styles/Supreme';
 import formatMoney from '../lib/formatMoney';
 import calcTotalPrice from '../lib/calcTotalPrice';
+import { useCart } from '../lib/cartState';
+import CloseButton from './styles/CloseButton';
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -49,16 +51,18 @@ const CartItem = ({ item }) => {
 
 export default function Cart() {
   const user = useUser();
+  const { cartOpen, toggleCart } = useCart();
 
   if (!user) return null;
 
   return (
-    <CartStyles open>
+    <CartStyles open={cartOpen}>
       <header>
         <Supreme>
           {user.name}
           &apos;s Cart
         </Supreme>
+        <CloseButton type="button" onClick={toggleCart}>&times;</CloseButton>
       </header>
 
       <ul>
