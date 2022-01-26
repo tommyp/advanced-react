@@ -11,8 +11,7 @@ import { User } from './schemas/User';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
 import { CartItem } from './schemas/CartItem';
-
-console.log(process.env.DATABASE_URL);
+import { extendGraphqlSchema } from './mutations/index';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorial';
@@ -60,12 +59,10 @@ export default withAuth(
       Product,
       User,
     }),
+    extendGraphqlSchema,
     ui: {
       // show UI only for people that pass this test
-      isAccessAllowed: ({ session }) => {
-        console.log(session);
-        return !!session?.data;
-      },
+      isAccessAllowed: ({ session }) => !!session?.data,
     },
     session: withItemData(statelessSessions(sessionConfig), {
       User: 'id',
