@@ -6,6 +6,7 @@ import formatMoney from '../lib/formatMoney';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import { useCart } from '../lib/cartState';
 import CloseButton from './styles/CloseButton';
+import RemoveFromCart from './RemoveFromCart';
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -44,6 +45,7 @@ const CartItem = ({ item }) => {
           </em>
         </p>
       </div>
+      <RemoveFromCart id={item.id} />
 
     </CartItemStyles>
   );
