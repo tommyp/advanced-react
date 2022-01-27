@@ -1,7 +1,6 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
-import { CURRENT_USER_QUERY } from './User';
 
 const BigButton = styled.button`
   appearance: none;
@@ -22,14 +21,22 @@ mutation REMOVE_FROM_CART_MUTATION($id: ID!) {
 }
 `;
 
+function update(cache, payload) {
+  cache.evict(cache.identify(payload.data.deleteCartItem));
+}
+
 export default function RemoveFromCart({ id }) {
   const [removeFromCart, { loading }] = useMutation(REMOVE_FROM_CART_MUTATION, {
     variables: {
       id,
     },
-    refetchQueries: [{
-      query: CURRENT_USER_QUERY,
-    }],
+    update,
+    // optimisticResponse: {
+    //   deleteCartItem: {
+    //     __typename: 'CartItem',
+    //     id,
+    //   },
+    // },
   });
 
   return (
