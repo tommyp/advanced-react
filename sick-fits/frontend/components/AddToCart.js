@@ -14,7 +14,7 @@ mutation ADD_TO_CART_MUTATION($id: ID!) {
 export default function AddToCart({ id }) {
   const { toggleCart } = useCart();
 
-  const [addToCart, { loading, data, error }] = useMutation(ADD_TO_CART_MUTATION, {
+  const [addToCart, { loading }] = useMutation(ADD_TO_CART_MUTATION, {
     variables: {
       id,
     },
