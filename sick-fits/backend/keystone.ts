@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import { createAuth } from '@keystone-next/auth';
 import 'dotenv/config';
@@ -12,6 +13,8 @@ import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
 import { CartItem } from './schemas/CartItem';
 import { extendGraphqlSchema } from './mutations/index';
+import { Order } from './schemas/Order';
+import { OrderItem } from './schemas/OrderItem';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorial';
@@ -56,6 +59,8 @@ export default withAuth(
     lists: createSchema({
       CartItem,
       ProductImage,
+      Order,
+      OrderItem,
       Product,
       User,
     }),

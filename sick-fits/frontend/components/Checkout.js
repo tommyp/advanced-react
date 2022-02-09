@@ -52,7 +52,9 @@ function CheckoutForm() {
     // 5. send the tokebn from step 3 to our keystone server via a custom mutation
     // 6. change the page to view the order
     // 7. close the cart
+
     // 8. turn the loader off
+    setLoading(false);
   }
 
   return (
