@@ -33,7 +33,10 @@ export default function Nav() {
           <button type="button" onClick={toggleCart}>
             cart
             {' '}
-            <CartCount count={user.cart.reduce((tally, cartItem) => tally + cartItem.quantity, 0)} />
+            <CartCount count={
+              user.cart.reduce((tally, cartItem) => tally + (cartItem.product ? cartItem.quantity : 0), 0)
+}
+            />
           </button>
 
         </>
