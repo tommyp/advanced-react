@@ -26,3 +26,24 @@ export const permissions = {
     return session?.data.name.includes('tommy');
   },
 };
+
+// rule based
+// rules can return a boolean - yes or no - or a filter which limits which products they can crud.
+
+export const rules = {
+  canManageProducts({ session }: ListAccessArgs) {
+    // 1. do they have the permission of canManageProducts
+    if (permissions.canManageProducts({ session })) {
+      return true;
+    }
+    // 2. if not do they own the item
+    return { user: { id: session.itemId } };
+  },
+  canReadProducts({ session }: ListAccessArgs) {
+    if (permissions.canManageProducts({ session })) {
+      return true;
+    }
+    // they should only see available products
+    return { status: 'AVAILABLE' };
+  },
+};
