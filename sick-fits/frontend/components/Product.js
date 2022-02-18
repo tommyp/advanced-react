@@ -14,6 +14,7 @@ export default function Product({ product }) {
         alt={product.name}
       />
       <Title>
+
         <Link href={`/product/${product.id}`}>
           {product.name}
         </Link>
