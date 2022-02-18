@@ -29,9 +29,9 @@ export default function Nav() {
           <Link href="/sell">Sell</Link>
           <Link href="/orders">Orders</Link>
           <Link href="/account">Account</Link>
-          <button type="button" onClick={signOut}>signout</button>
+          <button type="button" onClick={signOut}>Sign out</button>
           <button type="button" onClick={toggleCart}>
-            cart
+            My cart
             {' '}
             <CartCount count={
               user.cart.reduce((tally, cartItem) => tally + (cartItem.product ? cartItem.quantity : 0), 0)
