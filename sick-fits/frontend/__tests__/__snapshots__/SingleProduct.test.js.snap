@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleProduct /> errors out when an item is not found 1`] = `
+<div>
+  <div
+    class="ErrorMessage__ErrorStyles-sc-11u5fgj-0 cEfbva"
+  >
+    <p
+      data-testid="graphql-error"
+    >
+      <strong>
+        Shoot!
+      </strong>
+      No more mocked responses for the query: query SINGLE_ITEM_QUERY($id: ID!) {
+  product: Product(where: {id: $id}) {
+    name
+    price
+    description
+    id
+    photo {
+      image {
+        publicUrlTransformed
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+Expected variables: {"id":404}
+
+Failed to match 2 mocks for this query, which had the following variables:
+  {"id":"abc123"}
+  {"id":"404"}
+
+    </p>
+  </div>
+</div>
+`;
+
+exports[`<SingleProduct /> renders correctly 1`] = `
+<div>
+  <div
+    class="SingleProduct__ProductStyles-sc-1kapz8w-0 jnlTon"
+    data-testid="singleProduct"
+  >
+    <img
+      alt="dogs are best"
+      src="dog.jpg"
+    />
+    <div
+      class="details"
+    >
+      <h2>
+        dogs are best
+      </h2>
+      <p>
+        dogs
+      </p>
+    </div>
+  </div>
+</div>
+`;

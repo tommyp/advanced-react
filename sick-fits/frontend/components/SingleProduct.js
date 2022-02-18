@@ -50,7 +50,7 @@ export default function SingleProduct({ id }) {
   const { product } = data;
 
   return (
-    <ProductStyles>
+    <ProductStyles data-testid="singleProduct">
       <Head>
         <title>
           {product.name}
@@ -67,3 +67,5 @@ export default function SingleProduct({ id }) {
     </ProductStyles>
   );
 }
+
+export { SINGLE_ITEM_QUERY };
