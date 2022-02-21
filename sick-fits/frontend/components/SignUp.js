@@ -7,7 +7,7 @@ import Form from './styles/Form';
 // import { CURRENT_USER_QUERY } from './User';
 import DisplayError from './ErrorMessage';
 
-const SIGNUP_MUTATION = gql`
+export const SIGNUP_MUTATION = gql`
 mutation SIGNUP_MUTATION($name: String!, $email: String!, $password: String!) {
   createUser(data: {
     email: $email,
@@ -70,7 +70,7 @@ export default function SignUp() {
             Password
             <input type="password" name="password" id="password" onChange={handleChange} placeholder="Your password" value={inputs.password} />
           </label>
-          <button type="submit">Sign in</button>
+          <button type="submit">Sign up</button>
         </fieldset>
       </Form>
     </>
